@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { StrapiImage } from '@/components/ui/strapi-image';
+import { strapiImage } from '@/lib/strapi/strapiImage';
+import { BlurImage } from '@/components/blur-image';
 
 interface SectionImageProps {
   images?: any[];
@@ -21,8 +22,8 @@ export function SectionImage({ images, className = '' }: SectionImageProps) {
     <div className={`w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-30 py-4 sm:py-6 md:py-8 ${className}`}>
       <figure className="relative w-full">
         <div className="relative w-full overflow-hidden rounded-md sm:rounded-lg bg-slate-100 shadow-sm">
-          <StrapiImage
-            src={image.url}
+          <BlurImage
+            src={strapiImage(image.url)}
             alt={image.alternativeText || 'Section image'}
             width={1200}
             height={600}

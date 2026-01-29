@@ -4,8 +4,9 @@ import { Link } from 'next-view-transitions';
 
 import { Container } from './container';
 import DynamicZoneManager from './dynamic-zone/manager';
-import { StrapiImage } from '@/components/ui/strapi-image';
+import { strapiImage } from '@/lib/strapi/strapiImage';
 import { Article } from '@/types/types';
+import { BlurImage } from './blur-image';
 
 export async function BlogLayout({
   article,
@@ -26,8 +27,8 @@ export async function BlogLayout({
       </div>
       <div className="w-full mx-auto">
         {article?.image ? (
-          <StrapiImage
-            src={article.image.url}
+          <BlurImage
+            src={strapiImage(article.image.url)}
             height={800}
             width={800}
             className="h-40 md:h-96 w-full aspect-square object-cover rounded-3xl mask-[radial-gradient(circle,white,transparent)]"
@@ -60,7 +61,7 @@ export async function BlogLayout({
             <div className="mt-8 prose prose-sm prose-invert">{children}</div>
             <div className="flex space-x-2 items-center pt-12 border-t border-neutral-800 mt-12">
               <div className="flex space-x-2 items-center ">
-                {/* <StrapiImage 
+                {/* <BlurImage 
                   src={article.authorAvatar}
                   alt={article.author}
                   width={20}

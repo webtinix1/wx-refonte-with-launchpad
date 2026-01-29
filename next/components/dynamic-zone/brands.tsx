@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 
 import { Heading } from '../elements/heading';
 import { Subheading } from '../elements/subheading';
-import { StrapiImage } from '@/components/ui/strapi-image';
+import { strapiImage } from '@/lib/strapi/strapiImage';
+import { BlurImage } from '../blur-image';
 
 export const Brands = ({
   heading,
@@ -75,8 +76,8 @@ export const Brands = ({
               key={logo.title || `logo-${idx}`}
               className="relative"
             >
-              <StrapiImage
-                src={logo.image?.url}
+              <BlurImage
+                src={strapiImage(logo.image?.url)}
                 alt={logo.image.alternativeText}
                 width={400}
                 height={400}

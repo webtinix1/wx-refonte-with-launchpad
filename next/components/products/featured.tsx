@@ -1,9 +1,10 @@
 import { Link } from 'next-view-transitions';
 import React from 'react';
 
-import { StrapiImage } from '@/components/ui/strapi-image';
+import { strapiImage } from '@/lib/strapi/strapiImage';
 import { formatNumber } from '@/lib/utils';
 import { Product } from '@/types/types';
+import { BlurImage } from '../blur-image';
 
 export const Featured = ({
   products,
@@ -61,8 +62,8 @@ const FeaturedItem = ({
           ${formatNumber(product.price)}
         </span>
       </div>
-      <StrapiImage
-        src={product.images?.[0].url}
+      <BlurImage
+        src={strapiImage(product.images?.[0].url)}
         alt={product.name}
         width={1000}
         height={1000}
