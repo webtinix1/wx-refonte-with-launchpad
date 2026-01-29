@@ -4,7 +4,8 @@ import { Transition } from '@headlessui/react';
 import { memo, useEffect, useRef, useState } from 'react';
 
 import { SparklesCore } from '../../ui/sparkles';
-import { StrapiImage } from '@/components/ui/strapi-image';
+import { strapiImage } from '@/lib/strapi/strapiImage';
+import { BlurImage } from '@/components/blur-image';
 import { cn } from '@/lib/utils';
 
 export const TestimonialsSlider = ({ testimonials }: { testimonials: any }) => {
@@ -80,9 +81,9 @@ export const TestimonialsSlider = ({ testimonials }: { testimonials: any }) => {
                     beforeEnter={() => heightFix()}
                   >
                     <div className="absolute inset-0 h-full -z-10">
-                      <StrapiImage
+                      <BlurImage
                         className="relative top-11 left-1/2 -translate-x-1/2 rounded-full"
-                        src={item.user.image.url}
+                        src={strapiImage(item.user.image.url)}
                         width={56}
                         height={56}
                         alt={`${item.user.firstname} ${item.user.lastname}`}

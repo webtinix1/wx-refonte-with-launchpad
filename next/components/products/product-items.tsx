@@ -1,9 +1,10 @@
 import { Link } from 'next-view-transitions';
 import React from 'react';
 
-import { StrapiImage } from '@/components/ui/strapi-image';
 import { formatNumber, truncate } from '@/lib/utils';
 import { Product } from '@/types/types';
+import { strapiImage } from '@/lib/strapi/strapiImage';
+import { BlurImage } from '../blur-image';
 
 export const ProductItems = ({
   heading = 'Popular',
@@ -50,8 +51,8 @@ const ProductItem = ({
       <div className="relative border border-neutral-800  rounded-md overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black transition-all duration-200 z-30" />
 
-        <StrapiImage
-          src={product?.images?.[0].url}
+        <BlurImage
+          src={strapiImage(product?.images?.[0].url)}
           alt={product.name}
           width={600}
           height={600}

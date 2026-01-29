@@ -4,7 +4,8 @@ import Image from 'next/image';
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 
-import { StrapiImage } from '@/components/ui/strapi-image';
+import { strapiImage } from '@/lib/strapi/strapiImage';
+import { BlurImage } from '@/components/blur-image';
 import { cn } from '@/lib/utils';
 
 export const TestimonialsMarquee = ({
@@ -27,8 +28,8 @@ export const TestimonialsMarquee = ({
             >
               <Quote>{testimonial?.text}</Quote>
               <div className="flex gap-2 items-center mt-8">
-                <StrapiImage
-                  src={testimonial?.user?.image?.url}
+                <BlurImage
+                  src={strapiImage(testimonial?.user?.image?.url)}
                   alt={`${testimonial.user.firstname} ${testimonial.user.lastname}`}
                   width={40}
                   height={40}
@@ -58,8 +59,8 @@ export const TestimonialsMarquee = ({
             >
               <Quote>{testimonial.text}</Quote>
               <div className="flex gap-2 items-center mt-8">
-                <StrapiImage
-                  src={testimonial?.user?.image?.url}
+                <BlurImage
+                  src={strapiImage(testimonial?.user?.image?.url)}
                   alt={`${testimonial.user.firstname} ${testimonial.user.lastname}`}
                   width={40}
                   height={40}

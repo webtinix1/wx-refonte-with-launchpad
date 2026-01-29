@@ -78,7 +78,7 @@ export const Footer = async ({
         <div className="flex flex-col">
           {/* RS */}
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-10 sm:mt-28 mb-3">
-            <Typography className="text-sm">Suivez nous</Typography>
+            <Typography className="text-sm text-white">Suivez nous</Typography>
             <div className="flex gap-4 text-muted">
               {data?.social_media_links?.map((item: LinkItem) => (
                 <Link

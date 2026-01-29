@@ -3,13 +3,12 @@
 import { IconCheck } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-
 import AddToCartModal from '@/components/products/modal';
-import { StrapiImage } from '@/components/ui/strapi-image';
 import { useCart } from '@/context/cart-context';
 import { strapiImage } from '@/lib/strapi/strapiImage';
 import { cn, formatNumber } from '@/lib/utils';
 import { Product } from '@/types/types';
+import { BlurImage } from '../blur-image';
 
 export const SingleProduct = ({ product }: { product: Product }) => {
   const [activeThumbnail, setActiveThumbnail] = useState(
@@ -34,7 +33,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
               damping: 35,
             }}
           >
-            <StrapiImage
+            <BlurImage
               src={activeThumbnail}
               alt={product.name}
               width={600}
