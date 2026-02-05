@@ -12,7 +12,7 @@ export interface OurVisionOfDeveloppementProps {
 
 export function OurVisionOfDeveloppement({ heading, sub_heading, image }: OurVisionOfDeveloppementProps) {
     return (
-        <section className="w-full px-6 md:px-12 lg:px-24 py-16 md:py-24 bg-transparent">
+        <section className="w-full px-6 md:px-12 lg:px-24 py-16 md:py-24 bg-transparent ajustement-with-max">
             <div className="mx-auto flex flex-col items-center gap-8">
                 <Typography
                     as='h2'

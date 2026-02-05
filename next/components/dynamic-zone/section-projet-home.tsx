@@ -23,9 +23,9 @@ export function SectionProjetHome({
   locale,
 }: SectionProjetHomeProps) {
   return (
-    <section className="w-full flex flex-col py-12 md:py-18 gap-4">
+    <section className="w-full flex flex-col">
       {/* Header Section */}
-      <div className="px-4 sm:px-8 md:px-12 lg:px-16">
+      <div className="mb-12 px-4 sm:px-8 md:px-12 lg:px-16 ajustement-with-max">
         <Typography variant="h2" className="text-primary">
           {heading}
         </Typography>
@@ -45,7 +45,7 @@ export function SectionProjetHome({
         <div
           dir="rtl"
           className="w-full grid gap-4 sm:gap-6 
-                     md:max-h-[1200px] md:overflow-y-auto scrollbar-responsive md:pr-4 lg:pr-10"
+                     md:max-h-[1200px] md:overflow-y-auto scrollbar-responsive md:pr-4 lg:pr-10 ajustement-with-max"
         >
           {projets.map((projet) => (
             <CardComponent

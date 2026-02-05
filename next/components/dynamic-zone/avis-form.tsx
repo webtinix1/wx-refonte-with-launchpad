@@ -93,7 +93,7 @@ export function AvisForm(props: AvisFormProps) {
     }
 
     return (
-        <div className='min-h-screen w-full px-4 py-8 flex flex-col items-center justify-center'>
+        <div className='w-full px-4 py-8 flex flex-col items-center justify-center'>
             <div className='flex flex-col space-y-1 text-center mb-8'>
                 <Typography variant='h2' className='font-bold'>{props.heading}</Typography>
                 <Typography variant='p'>{props.sub_heading}</Typography>

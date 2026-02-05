@@ -26,7 +26,7 @@ export function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div className="bg-[var(--tertiare)] dark:text-black w-full h-auto px-6 md:px-10 lg:px-14 py-10 flex flex-col gap-8">
-      <div className="pt-4 md:pt-8">
+      <div className="pt-4 md:pt-8 ajustement-with-max">
         <Typography
           variant="h2"
           className="text-primary font-bold text-start"
@@ -42,7 +42,7 @@ export function ServiceCard({
         </Typography>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center w-full ajustement-with-max">
         {offres?.map((el) => (
           <CardService
             key={el.documentId}

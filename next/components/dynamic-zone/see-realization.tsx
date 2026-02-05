@@ -22,7 +22,7 @@ export function SeeRealization({
   image,
 }: SeeRealizationProps) {
   return (
-    <section className="w-screen flex justify-center py-12 px-4 sm:px-8 lg:px-12">
+    <section className="w-screen flex justify-center py-12 px-4 sm:px-8 lg:px-12 ">
       <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div className="flex flex-col gap-6 max-w-2xl">
           <Typography as="h2" className="text-primary leading-tight">

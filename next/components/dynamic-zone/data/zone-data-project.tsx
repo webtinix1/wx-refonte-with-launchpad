@@ -149,7 +149,7 @@ export function DatatListZoneproject({ collection, locale }: Props) {
     }
 
     return (
-        <div className='w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-8'>
+        <div className='w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-8 ajustement-with-max '>
             {/* Barre de filtres avec Selects */}
             <div className='mb-8 space-y-4 mx-auto'>
                 {/* Selects de filtres */}

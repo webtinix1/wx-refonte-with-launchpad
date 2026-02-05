@@ -45,8 +45,8 @@ export function ClientSatisfiedSection({
   // console.log(background_color, center);
   
   return (
-    <section className={`w-full h-auto mb-2 flex flex-col items-center gap-8 md:gap-12 lg:gap-16 p-4 sm:p-6 md:p-8 lg:p-16 text-foreground ${center ? 'text-center' : 'text-start'}`} style={{ backgroundColor: background_color || 'transparent' }}>
-      <header className="w-full max-w-6xl flex flex-col gap-3 md:gap-4">
+    <section className={`w-full h-auto flex flex-col items-center gap-8 md:gap-12 lg:gap-16 p-4 sm:p-6 md:p-8 lg:p-16 text-foreground ${center ? 'text-center' : 'text-start'}`} style={{ backgroundColor: background_color || 'transparent' }}>
+      <header className=" max-w-3xl auto flex flex-col gap-3 md:gap-4">
         <Typography
           as="h2"
           className="text-primary font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
@@ -71,7 +71,7 @@ export function ClientSatisfiedSection({
 
       {client_satisfied_detaileds && (
       <div className="w-full flex justify-center">
-        <div className="w-full max-w-7xl px-4 sm:px-6 md:px-8">
+        <div className="w-full max-w-4xl px-4 sm:px-6 md:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 justify-items-center w-full">
             {client_satisfied_detaileds?.map((detail) => (
               <ClientSatisfiedDetailItem

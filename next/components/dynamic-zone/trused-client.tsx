@@ -28,7 +28,7 @@ export function TrusedClient({
   logos,
 }: trusedClientProps) {
   return (
-    <div className="min-h-screen flex flex-col gap-4 px-4 md:px-8 lg:px-16 py-8">
+    <div className=" mb-28 flex flex-col gap-4 px-4 md:px-8 lg:px-16 py-8 ajustement-with-max">
       <Typography
         as="h2"
         className="text-primary text-2xl md:text-3xl font-bold"

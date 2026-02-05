@@ -24,7 +24,7 @@ export function MostAskedQuestion({ faqs, heading, sub_heading }: MostAskedQuest
     };
 
     return (
-        <section className="w-full px-6 md:px-12 lg:px-24 py-16 md:py-2 bg-transparent">
+        <section className="mt-20 mb-20 w-full px-6 md:px-12 lg:px-24 py-16 md:py-2 bg-transparent">
             <div className="mx-auto flex flex-col items-center mb-12 md:mb-16">
                 <Typography
                     as="h2"

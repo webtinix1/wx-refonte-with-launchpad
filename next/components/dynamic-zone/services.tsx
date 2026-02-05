@@ -31,7 +31,7 @@ export function Services({
     { bg: 'bg-blue-600', text: 'text-white' },
     { bg: 'bg-blue-200', text: 'text-black' },
   ];
-
+      //text-center max-w-7xl mx-auto
   return (
     <section className="w-full flex flex-col items-center bg-tertiare py-8 sm:py-12 md:py-16 lg:py-18 px-4 sm:px-6 md:px-8 lg:px-10 gap-6 sm:gap-8 md:gap-10">
       {/* Heading avec responsive amélioré */}
@@ -45,7 +45,7 @@ export function Services({
       {/* Sub-heading avec responsive amélioré */}
       <Typography
         variant={'p'}
-        className="text-black text-center leading-10  px-4"
+        className="text-black text-center leading-10 max-w-4xl"
       >
         {sub_heading}
       </Typography>

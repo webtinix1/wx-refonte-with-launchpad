@@ -1,14 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [{ hostname: process.env.IMAGE_HOSTNAME || 'localhost' }],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'preprod-api.webtinix.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '',
+        pathname: '/**',
+      },
+      { hostname: process.env.IMAGE_HOSTNAME || 'localhost' }
+    ],
   },
   pageExtensions: ['ts', 'tsx'],
   async redirects() {
     let redirections = [];
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/redirections`
+        `${process.env.IMAGE_HOSTNAME}/api/redirections`
       );
       const result = await res.json();
       const redirectItems = result.data.map(({ source, destination }) => {

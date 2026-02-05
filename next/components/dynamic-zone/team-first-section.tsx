@@ -19,7 +19,7 @@ export function TeamFirstSection({
     sub_heading,
 }: TeamFirstSectionProps) {
     return (
-        <section className="w-full px-6 md:px-12 lg:px-24 py-20">
+        <section className="w-full px-6 md:px-12 lg:px-24 py-20 ajustement-with-max">
             <div className="max-w-4xl">
                 <Typography
                     as="h2"

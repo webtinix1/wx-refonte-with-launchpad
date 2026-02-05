@@ -30,12 +30,12 @@ export function ContactForm({ form_config, ...props }: ContactFormProps) {
                 border-none
                 p-6
                 sm:p-8
-                mx-4
-                sm:mx-8
-                md:mx-12
-                lg:mx-24
-                my-8
-            "
+                
+                "
+                // my-8
+                // sm:mx-8
+                // md:mx-12
+                // lg:mx-24
         >
             <CardContent
                 className="
@@ -44,6 +44,7 @@ export function ContactForm({ form_config, ...props }: ContactFormProps) {
                     lg:grid-cols-2
                     gap-8
                     lg:gap-12
+                    ajustement-with-max
                 "
             >
                 {/* Bloc gauche */}
