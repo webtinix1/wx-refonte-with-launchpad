@@ -34,10 +34,10 @@ export function Who_are_we({
             style={{
                 backgroundColor: background_color || '#f4faff',
             }}
-            className="w-full px-6 md:px-12 lg:px-20 py-16 md:py-24"
+            className="w-full px-6 md:px-12 lg:px-20 py-16 md:py-24 "
         >
             {/* --- SECTION HAUT (Responsive : Colonne sur mobile, Ligne sur Desktop) --- */}
-            <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-20 md:mb-32">
+            <div className="ajustement-with-max flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-20 md:mb-32">
                 <div className="w-full lg:w-1/2">
                     <h2 className="font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-black">
                         {heading}
@@ -54,7 +54,7 @@ export function Who_are_we({
             </div>
 
             {/* --- SECTION GRILLE (Responsive : 1 col mobile, 3 cols desktop) --- */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-8 lg:gap-x-12 items-start">
+            <div className="ajustement-with-max grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-8 lg:gap-x-12 items-start">
 
                 {/* 1. WE + IMAGE */}
                 <div className="flex flex-col">

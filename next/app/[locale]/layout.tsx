@@ -74,7 +74,7 @@ export default async function LocaleLayout(props: {
            */}
           <main className="w-full min-h-full">
             {/* <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"> */}
-            <div className="mx-auto max-w-[1600px]">
+            <div className="mx-auto">
               {children}
             </div>
           </main>

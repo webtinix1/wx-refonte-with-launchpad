@@ -20,7 +20,7 @@ export function NotreEquipeHome({
   locale,
 }: NotreEquipeHomeProps) {
   return (
-    <section className="w-full flex flex-col items-center py-18 px-4 md:px-10 gap-10">
+    <section className="w-full flex flex-col items-center py-18 px-4 md:px-10 gap-10 ajustement-with-max">
       <Typography variant={'h2'} className="text-primary text-center">
         {heading}
       </Typography>

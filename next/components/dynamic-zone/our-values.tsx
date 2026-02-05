@@ -35,7 +35,7 @@ export function OurValues({ heading, values_items }: OurValuesProps) {
     };
 
     return (
-        <section className="w-full px-6 md:px-12 lg:px-20 py-16 md:py-24">
+        <section className="w-full px-6 md:px-12 lg:px-20 py-16 md:py-24 ajustement-with-max">
             <Typography className="text-primary font-bold text-3xl md:text-4xl mb-12 lg:mb-16 uppercase tracking-tight">
                 {heading}
             </Typography>

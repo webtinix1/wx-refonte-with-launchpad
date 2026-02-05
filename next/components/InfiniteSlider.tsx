@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useAnimationFrame, useMotionValue, useTransform } from "framer-motion";
 
 interface InfiniteSliderProps {
@@ -10,6 +10,7 @@ interface InfiniteSliderProps {
     speedOnHover?: number;
     className?: string;
     itemsVisibleOnscreen?: number;
+    gap?: number;
 }
 
 export const InfiniteSlider = ({
@@ -19,67 +20,74 @@ export const InfiniteSlider = ({
     speedOnHover = 20,
     className = "",
     itemsVisibleOnscreen = 5,
+    gap = 20,
 }: InfiniteSliderProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
 
-    // État pour la vitesse actuelle et la position
     const [currentSpeed, setCurrentSpeed] = useState(speed);
+    const [contentSize, setContentSize] = useState(0);
     const baseTranslation = useMotionValue(0);
 
-    // On duplique les enfants pour assurer la continuité
-    const duplicatedChildren = [...children, ...children];
+    // Dupliquer suffisamment pour couvrir l'écran
+    const duplicatedChildren = [...children, ...children, ...children];
 
-    useAnimationFrame((time, delta) => {
+    // Calculer la taille réelle d'un seul groupe
+    useEffect(() => {
         if (!contentRef.current) return;
 
-        // Calcul du déplacement basé sur le temps (delta) pour la fluidité
+        const updateSize = () => {
+            if (contentRef.current) {
+                const size = direction === "horizontal"
+                    ? contentRef.current.scrollWidth / 3
+                    : contentRef.current.scrollHeight / 3;
+                setContentSize(size);
+            }
+        };
+
+        updateSize();
+        window.addEventListener('resize', updateSize);
+        return () => window.removeEventListener('resize', updateSize);
+    }, [direction, children.length, gap]);
+
+    useAnimationFrame((time, delta) => {
+        if (!contentRef.current || contentSize === 0) return;
+
         const moveBy = (currentSpeed * delta) / 1000;
         let newTranslation = baseTranslation.get() - moveBy;
 
-        // Calcul de la taille d'une seule série d'éléments
-        const contentSize = direction === "horizontal"
-            ? contentRef.current.scrollWidth / 2
-            : contentRef.current.scrollHeight / 2;
-
-        // Reset de la position quand on a dépassé la moitié (boucle infinie)
-        if (Math.abs(newTranslation) >= contentSize) {
-            newTranslation = 0;
+        // Boucle infinie seamless
+        if (newTranslation <= -contentSize) {
+            // Ne pas reset à 0, mais ajouter contentSize pour continuité
+            baseTranslation.set(newTranslation + contentSize);
+        } else {
+            baseTranslation.set(newTranslation);
         }
-
-        baseTranslation.set(newTranslation);
     });
 
-    // Transforme la valeur brute en style CSS
     const x = useTransform(baseTranslation, (v) => (direction === "horizontal" ? v : 0));
     const y = useTransform(baseTranslation, (v) => (direction === "vertical" ? v : 0));
 
     return (
         <div
             ref={containerRef}
-            className={`relative overflow-hidden w-full ${className}`}
+            className={`relative overflow-hidden ajustement-with-max ${className}`}
             onMouseEnter={() => setCurrentSpeed(speedOnHover)}
             onMouseLeave={() => setCurrentSpeed(speed)}
         >
             <motion.div
                 ref={contentRef}
-                style={{ x, y }}
-                className={`flex ${direction === "horizontal" ? "flex-row" : "flex-column"} w-max`}
+                style={{ 
+                    x, 
+                    y,
+                    gap: `${gap}px`
+                }}
+                className={`flex mx-auto ${direction === "horizontal" ? "flex-row" : "flex-col"}`}
             >
                 {duplicatedChildren.map((child, index) => (
                     <div
                         key={index}
                         className="flex-shrink-0"
-                        style={{
-                            // On affiche itemsVisibleOnscreen éléments sur 70% de la largeur du conteneur parent
-                            width: direction === "horizontal"
-                                ? `calc((100vw * 0.7) / ${itemsVisibleOnscreen !== 5 ? itemsVisibleOnscreen : 5})`
-                                : "auto",
-                            height: direction === "vertical"
-                                ? `calc((100vh * 0.7) / ${itemsVisibleOnscreen !== 5 ? itemsVisibleOnscreen : 5})`
-                                : "auto",
-                            padding: "0 10px", // Espacement optionnel
-                        }}
                     >
                         {child}
                     </div>

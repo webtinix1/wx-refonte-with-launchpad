@@ -339,6 +339,10 @@
     font-family: var(--font-sans);
   }
 
+  .ajustement-with-max {
+    @apply max-w-[1600px] mx-auto
+  }
+
   /* text de base de l'application  */
   .font-size-base {
     @apply font-extralight leading-[100%] tracking-[0%] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px];

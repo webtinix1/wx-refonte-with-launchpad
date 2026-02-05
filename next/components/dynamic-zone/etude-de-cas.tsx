@@ -28,7 +28,7 @@ export function EtudeDeCas({
     solution_title
 }: EtudeDeCasProps) {
     return (
-        <section className="w-full px-6 md:px-12 lg:px-24 py-12 flex justify-center items-center">
+        <section className="w-full px-6 md:px-12 lg:px-24 py-12 flex justify-center items-center ajustement-with-max">
             <div
                 className="border border-border rounded-3xl p-8 md:p-12 lg:p-16 flex flex-col gap-10 max-w-7xl"
                 style={{ backgroundColor: background_color ? background_color : "transparent" }}

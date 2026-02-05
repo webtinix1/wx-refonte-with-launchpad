@@ -40,7 +40,7 @@ export function OurVisionSection({
       className="w-full"
       style={{ backgroundColor: background_color || 'transparent' }}
     >
-      <div className="mx-auto px-6 md:px-12 lg:px-24 py-24">
+      <div className="ajustement-with-max px-6 md:px-12 lg:px-24 py-24">
         <Typography as="h2" className="text-primary font-semibold text-xl mb-6">
           {heading}
         </Typography>

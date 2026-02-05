@@ -27,7 +27,7 @@ export const Testimonials = ({
   background_color,
 }: TestimonialProps) => {
   return (
-    <section style={{ backgroundColor: background_color || '#2E5399' }} className="w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 text-foreground">
+    <section style={{ backgroundColor: background_color || '#2E5399' }} className="w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 text-foreground">
       <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 text-center mb-6 sm:mb-8 md:mb-10 max-w-4xl">
         <Typography
           variant="h2"

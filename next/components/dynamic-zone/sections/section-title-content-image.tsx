@@ -13,7 +13,7 @@ export function SectionTitleContentImage({ heading, sub_heading, content, image 
 
   return (
     <div className="w-full py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-30">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start ajustement-with-max">
         {/* Partie gauche - Contenu */}
         <div className="flex flex-col justify-start gap-3 sm:gap-4">
           {/* Heading */}

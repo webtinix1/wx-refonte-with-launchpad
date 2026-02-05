@@ -54,7 +54,7 @@ export function TestimonyLeurAvis({
 
         {/* Sub heading */}
         {sub_heading && (
-          <Typography variant="large" className="font-extralight px-16">
+          <Typography variant="large" className="ajustement-with-max font-extralight px-16">
             {sub_heading}
           </Typography>
         )}

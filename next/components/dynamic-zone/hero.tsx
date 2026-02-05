@@ -74,7 +74,10 @@ export const Hero = ({
         <ShootingStars />
       </div>
 
-      <div className="relative z-20 flex flex-col items-start justify-center w-full h-full max-w-7xl px-6 md:px-12 lg:px-24 pt-20 pb-10">
+      {/* <div className="relative z-20 flex flex-col items-start justify-center w-full h-full max-w-7xl px-6 md:px-12 lg:px-24 pt-20 pb-10"> */}
+      <div className="relative z-20 flex flex-col items-start justify-center w-full h-full ajustement-with-max px-6 md:px-12 lg:px-24 pt-20 pb-10">
+
+
         <Heading
           as="h1"
           size="h1"

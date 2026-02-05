@@ -15,7 +15,7 @@ interface ThemeMemberProps {
 
 export function ThemeMember({ heading, team_members,locale }: ThemeMemberProps) {
   return (
-    <div className="flex flex-col space-y-4 px-10 md:px-24">
+    <div className="mb-28 flex flex-col space-y-4 px-10 md:px-24 ajustement-with-max">
       <Typography as="h2" className="text-primary text-start font-bold md:mt-14">
         {heading}
       </Typography>
