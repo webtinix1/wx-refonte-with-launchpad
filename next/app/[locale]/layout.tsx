@@ -54,13 +54,7 @@ export default async function LocaleLayout(props: {
             // inter.className,
             'antialiased h-full w-full'
           )}
-          style={{
-            backgroundImage: 'url(/bg.webp)',
-            backgroundAttachment: 'fixed',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
+
         >
           {/* Navbar full width */}
           <Navbar data={pageData?.navbar} locale={locale} />
@@ -72,7 +66,13 @@ export default async function LocaleLayout(props: {
                 max-w-[1440px] → 1440px (pour sites larges)
                 max-w-[1600px] → 1600px (très large)
            */}
-          <main className="w-full min-h-full">
+          <main className="w-full min-h-full " style={{
+            backgroundImage: 'url(/bg.webp)',
+            backgroundAttachment: 'fixed',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}>
             {/* <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"> */}
             <div className="mx-auto">
               {children}
